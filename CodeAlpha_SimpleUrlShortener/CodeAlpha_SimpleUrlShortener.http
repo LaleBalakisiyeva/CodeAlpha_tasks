@@ -1,0 +1,6 @@
+@CodeAlpha_SimpleUrlShortener_HostAddress = http://localhost:5036
+
+GET {{CodeAlpha_SimpleUrlShortener_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
