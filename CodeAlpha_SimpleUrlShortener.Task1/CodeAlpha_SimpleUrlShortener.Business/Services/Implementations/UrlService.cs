@@ -1,4 +1,5 @@
-﻿using CodeAlpha_SimpleUrlShortener.Business.DTOs.Url;
+﻿using AutoMapper;
+using CodeAlpha_SimpleUrlShortener.Business.DTOs.Url;
 using CodeAlpha_SimpleUrlShortener.Business.Helpers.Exceptions;
 using CodeAlpha_SimpleUrlShortener.Business.Services.Interfaces;
 using CodeAlpha_SimpleUrlShortener.Core.Entities;
@@ -14,10 +15,12 @@ namespace CodeAlpha_SimpleUrlShortener.Business.Services.Implementations
     public class UrlService : IUrlService
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IMapper _mapper;
 
-        public UrlService(IUnitOfWork unitOfWork)
+        public UrlService(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
+            _mapper = mapper;
         }
 
         public async Task<string> ShortenUrlAsync(UrlCreateDto dto)
@@ -31,11 +34,8 @@ namespace CodeAlpha_SimpleUrlShortener.Business.Services.Implementations
             }
             while (await urlRepository.GetAsync(x => x.ShortCode == shortCode) != null);
 
-            var urlMapping = new UrlMapping
-            {
-                OriginalUrl = dto.OriginalUrl,
-                ShortCode = shortCode
-            };
+            var urlMapping = _mapper.Map<UrlMapping>(dto);
+            urlMapping.ShortCode = shortCode;
 
             await urlRepository.AddAsync(urlMapping);
             await _unitOfWork.SaveChangesAsync();
@@ -50,7 +50,6 @@ namespace CodeAlpha_SimpleUrlShortener.Business.Services.Implementations
 
             if (urlMapping == null)
                 throw new NotFoundException("This short URL does not exist.");
-
 
             urlMapping.ClickCount++;
             urlRepository.Update(urlMapping);
