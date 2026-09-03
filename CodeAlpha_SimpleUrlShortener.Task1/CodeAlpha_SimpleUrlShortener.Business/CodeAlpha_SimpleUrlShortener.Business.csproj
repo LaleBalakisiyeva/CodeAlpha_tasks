@@ -11,12 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DTOs\" />
-    <Folder Include="Helpers\Exceptions\" />
     <Folder Include="Helpers\Mapper\" />
     <Folder Include="Validators\" />
-    <Folder Include="Services\Implementations\" />
-    <Folder Include="Services\Interfaces\" />
   </ItemGroup>
 
 </Project>
