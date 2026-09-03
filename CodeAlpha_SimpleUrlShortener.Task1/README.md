@@ -73,4 +73,10 @@ The solution follows clean N-Tier architectural principles with strict layer iso
 1. Update connection string in `API/appsettings.json` under `ConnectionStrings:DefaultConnection`.
 2. Open Package Manager Console or Terminal and run migrations:
    ```powershell
-   dotnet ef database update --project CodeAlpha_SimpleUrlShortener.DAL --startup-project CodeAlpha_SimpleUrlShortener.API
+   dotnet ef database update --project CodeAlpha_SimpleUrlShortener.DAL --startup-project CodeAlpha_SimpleUrlShortener.API                                          
+Execution
+Run the API project via Visual Studio (F5) or Terminal:
+
+PowerShell
+dotnet run --project CodeAlpha_SimpleUrlShortener.API
+Navigate to https://localhost:{PORT}/swagger to test endpoints via Swagger UI.
