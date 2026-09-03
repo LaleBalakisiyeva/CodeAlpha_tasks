@@ -18,4 +18,8 @@
     <ProjectReference Include="..\CodeAlpha_SimpleUrlShortener.Core\CodeAlpha_SimpleUrlShortener.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Context\Configurations\" />
+  </ItemGroup>
+
 </Project>
