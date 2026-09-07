@@ -1,0 +1,6 @@
+@CodeAlpha_EventRegistrationSystem.API_HostAddress = http://localhost:5095
+
+GET {{CodeAlpha_EventRegistrationSystem.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
