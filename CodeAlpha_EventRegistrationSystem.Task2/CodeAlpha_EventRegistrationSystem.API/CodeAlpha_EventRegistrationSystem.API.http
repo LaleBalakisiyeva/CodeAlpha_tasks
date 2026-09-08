@@ -1,4 +1,4 @@
-@CodeAlpha_EventRegistrationSystem.API_HostAddress = http://localhost:5095
+@CodeAlpha_EventRegistrationSystem.API_HostAddress = http://localhost:5259
 
 GET {{CodeAlpha_EventRegistrationSystem.API_HostAddress}}/weatherforecast/
 Accept: application/json
