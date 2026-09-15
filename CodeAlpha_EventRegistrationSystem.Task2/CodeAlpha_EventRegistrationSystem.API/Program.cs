@@ -1,6 +1,7 @@
 using CodeAlpha_EventRegistrationSystem.DAL;
 using CodeAlpha_EventRegistrationSystem.DAL.Contexts;
 using Microsoft.EntityFrameworkCore;
+using CodeAlpha_EventRegistrationSystem.Business;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,7 @@ builder.Services.AddControllers();
 
 
 builder.Services.AddDalServices();
+builder.Services.AddBusinessServices();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -24,6 +26,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseMiddleware<CodeAlpha_EventRegistrationSystem.API.Middlewares.GlobalExceptionMiddleware>();
 app.UseAuthorization();
 app.MapControllers();
 app.Run();

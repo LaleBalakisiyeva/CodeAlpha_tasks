@@ -8,9 +8,10 @@ namespace CodeAlpha_EventRegistrationSystem.DAL.Repositories.Interfaces
 {
     public interface IUnitOfWork : IDisposable
     {
-        IEventRepository Events { get; }
-        IUserRepository Users { get; }
-        IRegistrationRepository Registrations { get; }
-        Task<int> SaveAsync();
+        IEventRepository EventRepository { get; }
+        IUserRepository UserRepository { get; }
+        IRegistrationRepository RegistrationRepository { get; }
+
+        Task<int> SaveChangesAsync();
     }
 }

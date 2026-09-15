@@ -15,10 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\CodeAlpha_EventRegistrationSystem.Business\CodeAlpha_EventRegistrationSystem.Business.csproj" />
   </ItemGroup>
 

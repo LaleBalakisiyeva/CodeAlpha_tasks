@@ -12,19 +12,30 @@ namespace CodeAlpha_EventRegistrationSystem.DAL.Repositories.Implementations
     {
         private readonly AppDbContext _context;
 
-        public IEventRepository Events { get; private set; }
-        public IUserRepository Users { get; private set; }
-        public IRegistrationRepository Registrations { get; private set; }
+        public IEventRepository EventRepository { get; }
+        public IUserRepository UserRepository { get; }
+        public IRegistrationRepository RegistrationRepository { get; }
 
-        public UnitOfWork(AppDbContext context)
+        public UnitOfWork(
+            AppDbContext context,
+            IEventRepository eventRepository,
+            IUserRepository userRepository,
+            IRegistrationRepository registrationRepository)
         {
             _context = context;
-            Events = new EventRepository(_context);
-            Users = new UserRepository(_context);
-            Registrations = new RegistrationRepository(_context);
+            EventRepository = eventRepository;
+            UserRepository = userRepository;
+            RegistrationRepository = registrationRepository;
         }
 
-        public async Task<int> SaveAsync() => await _context.SaveChangesAsync();
-        public void Dispose() => _context.Dispose();
+        public async Task<int> SaveChangesAsync()
+        {
+            return await _context.SaveChangesAsync();
+        }
+
+        public void Dispose()
+        {
+            _context.Dispose();
+        }
     }
 }
