@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace CodeAlpha_EventRegistrationSystem.Business.Helpers.Exceptions
 {
-    internal class NotFoundException
+    public class NotFoundException : Exception
     {
+        public NotFoundException(string message) : base(message)
+        {
+        }
     }
 }

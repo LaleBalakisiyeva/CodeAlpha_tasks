@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace CodeAlpha_EventRegistrationSystem.Business.DTOs.Registration
 {
-    internal class RegistrationCreateDto
+    public class RegistrationCreateDto
     {
+        public int EventId { get; set; }
+        public int UserId { get; set; }
     }
 }

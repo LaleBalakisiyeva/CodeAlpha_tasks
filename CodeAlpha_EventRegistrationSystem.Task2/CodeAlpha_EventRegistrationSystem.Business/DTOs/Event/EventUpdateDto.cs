@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace CodeAlpha_EventRegistrationSystem.Business.DTOs.Event
 {
-    internal class EventUpdateDto
+    public class EventUpdateDto
     {
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public DateTime EventDate { get; set; }
+        public string Location { get; set; }
     }
 }

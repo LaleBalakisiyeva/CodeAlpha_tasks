@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace CodeAlpha_EventRegistrationSystem.Business.DTOs.Registration
 {
-    internal class RegistrationGetDto
+    public class RegistrationGetDto
     {
+        public int Id { get; set; }
+        public int EventId { get; set; }
+        public string EventTitle { get; set; }
+        public int UserId { get; set; }
+        public string UserFullName { get; set; }
     }
 }
