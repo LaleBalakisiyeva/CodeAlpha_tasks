@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace CodeAlpha_RestaurantManagementSystem.Core.Entities.Common
 {
-    internal class BaseEntity
+    public abstract class BaseEntity
     {
+        public int Id { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public DateTime? UpdatedAt { get; set; }
     }
 }

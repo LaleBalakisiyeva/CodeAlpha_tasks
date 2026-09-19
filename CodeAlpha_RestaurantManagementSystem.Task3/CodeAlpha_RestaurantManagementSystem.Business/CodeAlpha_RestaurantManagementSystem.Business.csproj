@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CodeAlpha_RestaurantManagementSystem.DAL\CodeAlpha_RestaurantManagementSystem.DAL.csproj" />
+  </ItemGroup>
+
 </Project>
