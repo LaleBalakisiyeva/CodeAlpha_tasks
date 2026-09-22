@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace CodeAlpha_RestaurantManagementSystem.Business.DTOs.TableDtos
 {
-    internal class TableCreateDto
+    public class TableCreateDto
     {
+        public int TableNumber { get; set; }
+        public int Capacity { get; set; }
     }
 }

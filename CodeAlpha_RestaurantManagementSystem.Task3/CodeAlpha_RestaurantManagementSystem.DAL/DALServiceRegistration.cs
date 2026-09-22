@@ -1,4 +1,6 @@
 ﻿using CodeAlpha_RestaurantManagementSystem.DAL.Contexts;
+using CodeAlpha_RestaurantManagementSystem.DAL.Repositories.Implementations;
+using CodeAlpha_RestaurantManagementSystem.DAL.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,12 +14,18 @@ namespace CodeAlpha_RestaurantManagementSystem.DAL
 {
     public static class DALServiceRegistration
     {
-        public static IServiceCollection AddDalServices(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddDalServices(this IServiceCollection services)
         {
-            services.AddDbContext<AppDbContext>(options =>
-                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
-   
+            services.AddScoped<IMenuItemRepository, MenuItemRepository>();
+            services.AddScoped<ITableRepository, TableRepository>();
+            services.AddScoped<IReservationRepository, ReservationRepository>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
+            services.AddScoped<IOrderItemRepository, OrderItemRepository>();
+            services.AddScoped<IInventoryItemRepository, InventoryItemRepository>();
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             return services;
         }

@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace CodeAlpha_RestaurantManagementSystem.Business.DTOs.OrderItemDtos
 {
-    internal class OrderItemCreateDto
+    public class OrderItemCreateDto
     {
+        public int MenuItemId { get; set; }
+        public int Quantity { get; set; }
     }
 }

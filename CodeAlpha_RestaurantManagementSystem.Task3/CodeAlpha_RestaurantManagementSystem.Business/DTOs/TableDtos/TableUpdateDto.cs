@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace CodeAlpha_RestaurantManagementSystem.Business.DTOs.TableDtos
 {
-    internal class TableUpdateDto
+    public class TableUpdateDto
     {
+        public int Id { get; set; }
+        public int TableNumber { get; set; }
+        public int Capacity { get; set; }
+        public bool IsOccupied { get; set; }
     }
 }

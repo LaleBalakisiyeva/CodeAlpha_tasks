@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace CodeAlpha_RestaurantManagementSystem.Business.Helpers.Exceptions
 {
-    internal class BadRequestException
+    public class BadRequestException : Exception
     {
+        public BadRequestException(string message) : base(message)
+        {
+        }
     }
 }

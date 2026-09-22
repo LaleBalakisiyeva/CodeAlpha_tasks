@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace CodeAlpha_RestaurantManagementSystem.Business.DTOs.InventoryDtos
 {
-    internal class InventoryItemCreateDto
+    public class InventoryItemCreateDto
     {
+        public string ItemName { get; set; } = null!;
+        public decimal Quantity { get; set; }
+        public string Unit { get; set; } = null!;
+        public decimal MinimumRequiredQuantity { get; set; }
     }
 }
