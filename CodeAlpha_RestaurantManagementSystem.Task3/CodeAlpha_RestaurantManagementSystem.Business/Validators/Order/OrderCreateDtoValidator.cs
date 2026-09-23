@@ -19,3 +19,4 @@ namespace CodeAlpha_RestaurantManagementSystem.Business.Validators.Order
                 .NotEmpty().WithMessage("Order must contain at least one item.");
         }
     }
+}

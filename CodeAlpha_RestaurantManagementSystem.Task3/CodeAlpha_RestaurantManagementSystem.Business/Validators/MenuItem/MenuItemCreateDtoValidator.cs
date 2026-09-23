@@ -22,3 +22,5 @@ namespace CodeAlpha_RestaurantManagementSystem.Business.Validators.MenuItem
             RuleFor(x => x.Category)
                 .NotEmpty().WithMessage("Category is required.");
         }
+    }
+}

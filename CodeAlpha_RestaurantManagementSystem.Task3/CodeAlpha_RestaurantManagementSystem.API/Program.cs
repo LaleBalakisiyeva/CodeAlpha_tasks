@@ -1,3 +1,4 @@
+using CodeAlpha_RestaurantManagementSystem.Business;
 using CodeAlpha_RestaurantManagementSystem.DAL;
 using CodeAlpha_RestaurantManagementSystem.DAL.Contexts;
 using Microsoft.EntityFrameworkCore;
@@ -16,6 +17,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddDalServices();
+builder.Services.AddBusinessServices();
 
 var app = builder.Build();
 

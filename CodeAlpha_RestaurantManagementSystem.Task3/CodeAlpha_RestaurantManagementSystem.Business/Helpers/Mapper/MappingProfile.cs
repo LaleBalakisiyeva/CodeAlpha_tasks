@@ -36,7 +36,8 @@ namespace CodeAlpha_RestaurantManagementSystem.Business.Helpers.Mapper
             
             CreateMap<Order, OrderGetDto>()
                 .ForMember(dest => dest.TableNumber, opt => opt.MapFrom(src => src.Table.TableNumber));
-            CreateMap<OrderCreateDto, Order>();
+            CreateMap<OrderCreateDto, Order>()
+                .ForMember(dest => dest.OrderItems, opt => opt.MapFrom(src => src.Items));
 
             CreateMap<OrderItem, OrderItemGetDto>()
                 .ForMember(dest => dest.MenuItemName, opt => opt.MapFrom(src => src.MenuItem.Name));
@@ -44,7 +45,8 @@ namespace CodeAlpha_RestaurantManagementSystem.Business.Helpers.Mapper
 
            
             CreateMap<InventoryItem, InventoryItemGetDto>().ReverseMap();
-            CreateMap<InventoryItemCreateDto, InventoryItem>();
+            CreateMap<InventoryItemCreateDto, InventoryItem>()
+    .ForMember(dest => dest.IngredientName, opt => opt.MapFrom(src => src.ItemName));
         }
     }
 }

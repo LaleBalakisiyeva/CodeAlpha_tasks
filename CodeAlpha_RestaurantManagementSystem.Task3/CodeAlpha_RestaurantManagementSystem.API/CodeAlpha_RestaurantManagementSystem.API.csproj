@@ -15,10 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\CodeAlpha_RestaurantManagementSystem.Business\CodeAlpha_RestaurantManagementSystem.Business.csproj" />
   </ItemGroup>
 
