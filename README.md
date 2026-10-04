@@ -1,6 +1,6 @@
 # CodeAlpha Internship Projects
 
-A collection of backend projects developed during my **Software Development Internship at CodeAlpha**, using **C# and .NET 8**.
+A collection of backend projects developed during my **Backend Developer Internship at CodeAlpha**, using **C# and .NET 8**.
 
 The projects demonstrate practical experience with **N-Tier Architecture, ASP.NET Core Web API, Entity Framework Core, SQL Server, RESTful APIs, Repository and Unit of Work patterns, Dependency Injection, validation, and middleware**.
 
